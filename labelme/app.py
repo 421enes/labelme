@@ -37,7 +37,7 @@ from labelme.widgets import ZoomWidget
 
 from mmocr.utils.ocr import MMOCR
 
-use_text_recognition = True
+use_text_recognition = False
 ocr_detector_checkpoint = r'C:\Users\user\OneDrive\Masaüstü\best_0_hmean-iou_hmean_epoch_4.pth'
 ocr_recognition_checkpoint = r'C:\Users\user\OneDrive\Masaüstü\best_0_char_precision_epoch_3.pth'
 if use_text_recognition:

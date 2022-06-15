@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import sys,os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 import functools
 import math
@@ -16,7 +19,7 @@ from qtpy import QtWidgets
 from labelme import __appname__
 from labelme import PY2
 
-from . import utils
+from labelme import utils
 from labelme.config import get_config
 from labelme.label_file import LabelFile
 from labelme.label_file import LabelFileError
@@ -35,12 +38,12 @@ from labelme.widgets import ZoomWidget
 from mmocr.utils.ocr import MMOCR
 
 use_text_recognition = True
-ocr_detector_checkpoint = '/home/gsoykan20/Desktop/self_development/mmocr/work_dirs/dbnet_r50dcnv2_fpnc_1200e_icdar2015_custom_140_20_adam6/best_0_hmean-iou:hmean_epoch_3.pth'
-ocr_recognition_checkpoint = '/home/gsoykan20/Desktop/self_development/mmocr/work_dirs/nrtr_r31_1by8_1by4_custom_89imgs_6ep/best_0_char_precision_epoch_3.pth'
+ocr_detector_checkpoint = r'C:\Users\user\OneDrive\Masaüstü\best_0_hmean-iou_hmean_epoch_4.pth'
+ocr_recognition_checkpoint = r'C:\Users\user\OneDrive\Masaüstü\best_0_char_precision_epoch_3.pth'
 if use_text_recognition:
-    recog_config = '/home/gsoykan20/Desktop/self_development/mmocr/configs/textrecog/nrtr/nrtr_r31_1by8_1by4_academic.py'
+    recog_config = r'C:\Users\user\mmocr\configs\textrecog\nrtr\nrtr_r31_1by8_1by4_academic.py'
     ocr_recognition = MMOCR(det='DB_r50',
-                            det_config="/home/gsoykan20/Desktop/self_development/mmocr/configs/textdet/dbnet/dbnet_r50dcnv2_fpnc_1200e_icdar2015.py",
+                            det_config=r"C:\Users\user\mmocr\configs\textdet\dbnet\dbnet_r50dcnv2_fpnc_1200e_icdar2015.py",
                             det_ckpt=ocr_detector_checkpoint,
                             recog='NRTR_1/8-1/4',
                             recog_config=recog_config,
@@ -50,7 +53,7 @@ else:
     ocr_detection = MMOCR(det='DB_r50',
                           det_ckpt=ocr_detector_checkpoint,
                           recog=None,
-                          det_config="/home/gsoykan20/Desktop/self_development/mmocr/configs/textdet/dbnet/dbnet_r50dcnv2_fpnc_1200e_icdar2015.py")
+                          det_config=r"C:\Users\user\mmocr\configs\textdet\dbnet\dbnet_r50dcnv2_fpnc_1200e_icdar2015.py")
 # FIXME
 # - [medium] Set max zoom value to something big enough for FitWidth/Window
 

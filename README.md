@@ -1,3 +1,4 @@
+pip install -U git+https://github.com/421enes/labelme.git@main
 <h1 align="center">
   <img src="labelme/icons/icon.png"><br/>labelme
 </h1>

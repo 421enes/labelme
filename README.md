@@ -1,5 +1,14 @@
+labelme/app.py in içerisinde 
+```
+use_text_recognition = False
+```
+flagını True ya da False yaparak mode lar arasında geçiş yapabilirsin.
+Bunu gerçekleştirdikten sonra lokalinde aşağıdaki komutu çalıştırabilirsin. => doğru conda env inde.
+```
 pip install -U git+https://github.com/421enes/labelme.git@main
+```
 <h1 align="center">
+pip install -U git+https://github.com/421enes/labelme.git@main
   <img src="labelme/icons/icon.png"><br/>labelme
 </h1>
 
